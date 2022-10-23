@@ -14,11 +14,11 @@ function regValidation(data){
                     .string()
                     .required()
                     .min(2)
-                    .max(8),
+                    .max(28),
             address:Joi
                     .string()
                     .min(2)
-                    .max(25)                
+                    .max(250)                
        })
        const valid = schema.validate(data)
        return valid
@@ -33,7 +33,7 @@ function loginValidation(data){
                 .string()
                 .required()
                 .min(2)
-                .max(8)              
+                .max(28)              
    })
    const valid= schema.validate(data);
    return valid
