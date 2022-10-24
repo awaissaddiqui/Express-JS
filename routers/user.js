@@ -12,10 +12,10 @@ userRoutes.post("/register", async(req, res)=>{
 
     const {name, email,password , address}= req.body;
     const {error} = regValidation(req.body)
-    if(error) return res.send(error.details[0].message)
+    if(error) return res.status(400).send(error.details[0].message)
 
     const findUser=await User.findOne({email:req.body.email})
-    if(findUser) return res.send("Email already exists")
+    if(findUser) return res.status(400).send("Email already exists")
 
     const salt = await bcrypt.genSalt(10);
     const hash = await bcrypt.hash(password, salt)
