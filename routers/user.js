@@ -50,7 +50,7 @@ userRoutes.post("/login", async(req, res)=>{
         const {email, password} = req.body;
 
        const user = await User.findOne({email:email})
-       if(!user) return res.status(400).send("email not exit")
+       if(!user) return res.status(400).send("You don't have an account Please Sign Up!!")
 
        const compare = await bcrypt.compare(password, user.password)
        if(!compare) return res.status(400).send("password is incorrect!!")

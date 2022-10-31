@@ -4,7 +4,7 @@ function regValidation(data){
             name: Joi
                     .string()
                     .required()
-                    .min(2)
+                    .min(3)
                     .max(18),
             email:Joi
                     .string()
@@ -13,7 +13,7 @@ function regValidation(data){
             password:Joi
                     .string()
                     .required()
-                    .min(2)
+                    .min(4)
                     .max(28),
             address:Joi
                     .string()

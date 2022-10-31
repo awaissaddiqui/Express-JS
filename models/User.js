@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const userSchema = new mongoose.Schema({
     name:{
         type: String,
-        min: 3,
+        min: 4,
         max:20,
         required:true
 
